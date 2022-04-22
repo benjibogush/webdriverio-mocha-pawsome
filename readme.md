@@ -46,3 +46,14 @@ wdio wdio.conf.js --spec ./tests/specs/login.js
 Install the plugin: `npm install --save-dev wdio-screenshot` 
 Enable the plugin in the wdio.conf.js file in the plugings object: `plugins: { 'wdio-screenshot': {} }`
 Inside your test, add the following step (for a document(full-page screenshot): browser.saveDocumentScreenshot('<screenShotsPath>/screenshotName.png');
+
+
+# Take screenshot on failure
+> inside wdio.conf.js add this code below.
+`
+  afterTest: async function (test, context, { error, result, duration, passed, retries }) {
+        if (error || !passed) {
+            await browser.saveScreenshot('./screenshots/screenshot.png');
+        }
+    },
+`
