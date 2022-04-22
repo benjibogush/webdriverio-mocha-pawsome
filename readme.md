@@ -50,6 +50,7 @@ Inside your test, add the following step (for a document(full-page screenshot): 
 
 # Take screenshot on failure
 > inside wdio.conf.js add this code below.
+
 `
   afterTest: async function (test, context, { error, result, duration, passed, retries }) {
         if (error || !passed) {
