@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
-    "test1": "npx wdio wdio.conf.js && mocha server-test",
-    "crack": "./node_modules/.bin/mocha/wdio wdio.conf.j"
+    "test1": "npx wdio wdio.conf.js && mocha server-test"
+
   },
   "keywords": [],
   "author": "",
@@ -23,5 +23,10 @@
     "wdio-chromedriver-service": "^7.3.2",
     "wdio-image-comparison-service": "^3.1.1",
     "wdio-screenshot": "^0.6.0"
+  },
+
+  "publishConfig": {
+    "@benjibogush:registry": "https://npm.pkg.github.com"
   }
+
 }
